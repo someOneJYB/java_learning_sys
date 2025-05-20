@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.my.springstart.mapper.EmployeeMapper">
+    <!--条件查询-->
+    <select id="list" resultType="org.my.springstart.entity.Employee">
+        select e.*, d.name deptName
+        from emp e
+        left join dept d on e.dept_id = d.id
+        <where>
+            <if test="name != null and name != ''">
+                e.name like concat('%', #{name}, '%')
+            </if>
+            <!--条件查询, 如果第一个语句不存在的话 and 会被自动去掉，灵活智能的 sql XML 语句-->
+            <if test="gender != null">
+                and e.gender = #{gender}
+            </if>
+            <if test="begin != null and end != null ">
+                and e.entry_date between #{begin} and #{end}
+            </if>
+        </where>
+        order by e.update_time desc
+    </select>
+    <!--需要回填数据库生成的主键 → 必须启用 useGeneratedKeys，keyProperty 仅定义回填目标属性，所以在关联表的时候一定要使用-->
+    <insert id="add" useGeneratedKeys="true" keyProperty="id">
+        insert into emp
+        values (null, #{username}, #{password}, #{name}, #{gender}, #{phone}, #{job}, #{salary}, #{image}, #{entryDate},
+                #{deptId}, #{createTime}, #{updateTime})
+    </insert>
+    <update id="update">
+        update emp
+        <set>
+            <if test="username != null and username != ''">username = #{username},</if>
+            <if test="password != null and password != ''">password = #{password},</if>
+            <if test="name != null and name != ''">name = #{name},</if>
+            <if test="gender != null">gender = #{gender},</if>
+            <if test="phone != null and phone != ''">phone = #{phone},</if>
+            <if test="job != null">job = #{job},</if>
+            <if test="salary != null">salary = #{salary},</if>
+            <if test="image != null and image != ''">image = #{image},</if>
+            <if test="entryDate != null">entry_date = #{entryDate},</if>
+            <if test="deptId != null">dept_id = #{deptId},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </set>
+        where id = #{id}
+    </update>
+    <!--resultMap标签，进行一对多数据映射，  autoMapping设置为true可以进行自动映射-->
+    <resultMap id="empResultMap" type="org.my.springstart.entity.Employee" autoMapping="true">
+        <!--id标签，主键映射-->
+        <id column="id" property="id"/>
+        <!--collection标签：用来封装集合数据，适用于一对多的情况-->
+        <collection property="exprList" ofType="org.my.springstart.entity.EmpExpr">
+            <result column="ee_id" property="id" />
+            <result column="ee_empId" property="empId"/>
+            <result column="ee_begin" property="begin"/>
+            <result column="ee_end" property="end"/>
+            <result column="ee_company" property="company"/>
+            <result column="ee_job" property="job"/>
+        </collection>
+
+    </resultMap>
+    <select id="getJoin" resultMap="empResultMap">
+        select e.*,
+               ee.id ee_id,
+               ee.emp_id ee_empId,
+               ee.begin ee_begin,
+               ee.end ee_end,
+               ee.company ee_company,
+               ee.job ee_job
+        from emp e left join emp_expr ee on e.id = ee.emp_id where e.id = #{id}
+    </select>
+    <!--统计各职位员工人数-->
+    <select id="countByJob" resultType="java.util.Map">
+        select
+            (case job
+                 when 1 then '班主任'
+                 when 2 then '讲师'
+                 when 3 then '学生主管'
+                 when 4 then '教研主管'
+                 when 5 then '咨询师'
+                 else '其他' end) pos,
+            count(*) sum
+        from emp
+        group by pos
+    </select>
+
+    <!--统计各性别员工人数-->
+    <select id="countByGender" resultType="java.util.Map">
+        select if(gender = 1, '男性员工', '女性员工') name,
+               count(*)  value
+        from emp
+        group by gender
+    </select>
+    <select id="getLogin" resultType="org.my.springstart.entity.EmpLoginInfo" parameterType="org.my.springstart.entity.Employee">
+        select * from emp where password = #{password} and username = #{username}
+    </select>
+</mapper>
