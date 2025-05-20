@@ -40,11 +40,4 @@ logging:
 server:
   port: 8089
 
-##自定义配置
-aliyun:
-  oss:
-    endpoint: oss-rg-china-mainland.aliyuncs.com
-    bucket: mypics
-    access-key-id: LTAI5t8PGMMg7f8NBDa3tgPA
-    access-key-secret: FXPBakkj8Whu2nQSrRtH8KABUHFzMT
 
