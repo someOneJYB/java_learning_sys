@@ -1,0 +1,77 @@
+2025-05-08 13:56:45.369 [main] INFO  org.my.springstart.SpringStartApplication-Starting SpringStartApplication using Java 21.0.6 with PID 88127 (/Users/baiyuejiao/Desktop/j-p/spring-start/target/classes started by baiyuejiao in /Users/baiyuejiao/Desktop/j-p/spring-start)
+2025-05-08 13:56:45.370 [main] INFO  org.my.springstart.SpringStartApplication-No active profile set, falling back to 1 default profile: "default"
+2025-05-08 13:56:45.949 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 8089 (http)
+2025-05-08 13:56:45.955 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8089"]
+2025-05-08 13:56:45.955 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-05-08 13:56:45.955 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-05-08 13:56:45.979 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-05-08 13:56:45.979 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 591 ms
+2025-05-08 13:56:46.418 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver-Exposing 1 endpoint(s) beneath base path '/actuator'
+2025-05-08 13:56:46.450 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8089"]
+2025-05-08 13:56:46.454 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext-Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2025-05-08 13:56:46.455 [main] INFO  com.alibaba.druid.pool.DruidDataSource-{dataSource-0} closing ...
+2025-05-08 13:56:46.474 [main] INFO  o.s.b.a.logging.ConditionEvaluationReportLogger-
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-05-08 13:56:46.483 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter-
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8089 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8089 or configure this application to listen on another port.
+
+2025-05-08 13:56:57.605 [main] INFO  org.my.springstart.SpringStartApplication-Starting SpringStartApplication using Java 21.0.6 with PID 88135 (/Users/baiyuejiao/Desktop/j-p/spring-start/target/classes started by baiyuejiao in /Users/baiyuejiao/Desktop/j-p/spring-start)
+2025-05-08 13:56:57.606 [main] INFO  org.my.springstart.SpringStartApplication-No active profile set, falling back to 1 default profile: "default"
+2025-05-08 13:56:58.178 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 8089 (http)
+2025-05-08 13:56:58.183 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8089"]
+2025-05-08 13:56:58.184 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-05-08 13:56:58.184 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-05-08 13:56:58.204 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-05-08 13:56:58.205 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 580 ms
+2025-05-08 13:56:58.628 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver-Exposing 1 endpoint(s) beneath base path '/actuator'
+2025-05-08 13:56:58.659 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8089"]
+2025-05-08 13:56:58.662 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext-Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2025-05-08 13:56:58.664 [main] INFO  com.alibaba.druid.pool.DruidDataSource-{dataSource-0} closing ...
+2025-05-08 13:56:58.681 [main] INFO  o.s.b.a.logging.ConditionEvaluationReportLogger-
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-05-08 13:56:58.688 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter-
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8089 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8089 or configure this application to listen on another port.
+
+2025-05-08 13:57:04.024 [main] INFO  org.my.springstart.SpringStartApplication-Starting SpringStartApplication using Java 21.0.6 with PID 88137 (/Users/baiyuejiao/Desktop/j-p/spring-start/target/classes started by baiyuejiao in /Users/baiyuejiao/Desktop/j-p/spring-start)
+2025-05-08 13:57:04.025 [main] INFO  org.my.springstart.SpringStartApplication-No active profile set, falling back to 1 default profile: "default"
+2025-05-08 13:57:04.709 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 8089 (http)
+2025-05-08 13:57:04.715 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8089"]
+2025-05-08 13:57:04.716 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-05-08 13:57:04.717 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-05-08 13:57:04.745 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-05-08 13:57:04.745 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 698 ms
+2025-05-08 13:57:05.190 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver-Exposing 1 endpoint(s) beneath base path '/actuator'
+2025-05-08 13:57:05.216 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8089"]
+2025-05-08 13:57:05.240 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 8089 (http) with context path ''
+2025-05-08 13:57:05.250 [main] INFO  org.my.springstart.SpringStartApplication-Started SpringStartApplication in 1.404 seconds (process running for 1.71)
+2025-05-08 13:57:15.838 [http-nio-8089-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-08 13:57:15.838 [http-nio-8089-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2025-05-08 13:57:15.839 [http-nio-8089-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+2025-05-08 13:57:15.892 [http-nio-8089-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource-{dataSource-1} inited
+2025-05-08 13:57:40.685 [http-nio-8089-exec-3] INFO  org.my.springstart.controller.DeptController-dept = Dept(id=12, name=智测部, createTime=null, updateTime=null)
+2025-05-08 14:11:53.607 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource-{dataSource-1} closing ...
+2025-05-08 14:11:53.609 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource-{dataSource-1} closed
